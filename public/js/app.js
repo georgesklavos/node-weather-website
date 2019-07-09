@@ -70,9 +70,10 @@ const showWeather = (longitude, latitude, finalLocation) => {
         let humidity = data.daily[i].humidity * 100;
         let windSpeed = Math.round(data.daily[i].windSpeed);
         let visibility = Math.floor(data.daily[i].visibility);
+        let precipProbability = (data.daily[i].precipProbability * 100).toFixed(0);
         if (i === 0) {
           currentTemp = `
-          <div id = title >Currnet Temp</div>
+          <div id = title >Current Temp</div>
           <div class = current id = number>${data.currently.temperature}${unit}</div>
           `;
         } else {
@@ -92,11 +93,11 @@ const showWeather = (longitude, latitude, finalLocation) => {
            <div class="humidity-${i}" id = title>Humidity</div>
            <div class="humidity-number-${i}" id = number>${humidity}%</div>
            <div class="visibility-${i}" id = title>Visibility</div>
-           <div class="visibility-number-${i}" id = number>${visibility}</div>
+           <div class="visibility-number-${i}" id = number>${visibility}mi</div>
            <div class="pressure-${i}"></div>
            <div class="pressure-number-${i}"></div>
-           <div class="predictability-${i}"></div>
-           <div class="predictability-number-${i}"></div>
+           <div class="predictability-${i}" id = title>Precipitation</div>
+           <div class="predictability-number-${i}" id = number>${precipProbability}%</div>
         </div>`
         );
       }
