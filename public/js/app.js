@@ -87,7 +87,6 @@ const showWeather = (longitude, latitude, finalLocation) => {
            <div class="weather-icon-${i}"></div>
            <div class="temp-Max-${i}" id = temp>Max:${data.daily[i].temperatureMax}${unit}</div>
            <div class="temp-Min-${i}" id = temp id = temp-Min>Min:${data.daily[i].temperatureMin}${unit}</div> 
-           ${currentTemp}
            <div class="wind-speed-${i}" id = title>Wind Speed</div>
            <div class="wind-${i}" id = number>${windSpeed}mph</div>
            <div class="humidity-${i}" id = title>Humidity</div>
@@ -98,6 +97,7 @@ const showWeather = (longitude, latitude, finalLocation) => {
            <div class="pressure-number-${i}"></div>
            <div class="predictability-${i}" id = title>Precipitation</div>
            <div class="predictability-number-${i}" id = number>${precipProbability}%</div>
+           ${currentTemp}
         </div>`
         );
       }
