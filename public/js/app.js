@@ -4,7 +4,8 @@ const message1 = document.querySelector('#message-1');
 const place = document.querySelector('#place');
 const title = document.querySelector('.location');
 const places = document.querySelector('#places');
-//TEST
+
+
 weatherForm.addEventListener('submit', e => {
   e.preventDefault();
   const location = search.value;
