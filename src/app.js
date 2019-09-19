@@ -3,7 +3,7 @@ const express = require('express');
 const hbs = require('hbs');
 const geocode = require('./utils/geocode');
 const forecast = require('./utils/forecast');
-
+//Test now
 const app = express();
 const port = process.env.PORT || 3000;
 
@@ -66,17 +66,21 @@ app.get('/geocode', (req, res) => {
 });
 
 app.get('/weather', (req, res) => {
-  forecast(req.query.latitude, req.query.longitude, (error, daily, currently) => {
-    if (error) {
-      return res.send({
-        error
+  forecast(
+    req.query.latitude,
+    req.query.longitude,
+    (error, daily, currently) => {
+      if (error) {
+        return res.send({
+          error
+        });
+      }
+      res.send({
+        currently,
+        daily
       });
     }
-    res.send({
-      currently,
-      daily
-    });
-  });
+  );
 });
 
 app.get('/products', (req, res) => {
